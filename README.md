@@ -1,14 +1,15 @@
-Selenium C# Automation Practice Form Test
+
+# Selenium C# Automation Practice Form Test
 This project is a simple automation script using Selenium WebDriver in C# to interact with an online form. The main objective is to fill out the form with predefined data, and submit it to ensure that the fields are filled correctly. The form includes fields such as "First Name", "Mobile Number", "Country", and others. The script is designed to work even if the position or other properties of the HTML elements change.
 
-Prerequisites
+# Prerequisites
 Before running the project, ensure you have the following installed:
 
 Visual Studio or any C# development environment.
 Selenium WebDriver for C#.
 ChromeDriver compatible with your version of Google Chrome.
 .NET SDK (e.g., .NET 6 or later).
-Installation
+# Installation
 1. Clone the repository:
 bash
 Copy code
@@ -36,7 +37,7 @@ Build and run the project in Visual Studio or by using the following command:
 bash
 Copy code
 dotnet run
-How the Script Works
+# How the Script Works
 Setup: The script initializes a ChromeDriver instance (optionally in headless mode) and opens the form on the website.
 
 Element Interaction:
@@ -51,7 +52,7 @@ Handling Errors: The script is designed to handle errors like timeouts or missin
 
 Termination: The browser closes after the script has finished executing.
 
-Example Output
+# Example Output
 After running the script, you should see the following output in the console if everything goes as planned:
 
 css
@@ -66,5 +67,3 @@ Element Not Found: If the script cannot locate an element, verify the XPath or C
 
 Chrome Version Mismatch: Ensure that the version of ChromeDriver matches the version of Google Chrome installed on your machine. You can download the correct version of ChromeDriver from here.
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
