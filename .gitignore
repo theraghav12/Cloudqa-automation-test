@@ -1,0 +1,59 @@
+# .NET Core build artifacts
+bin/
+obj/
+
+# User-specific files
+.vscode/
+.idea/
+
+# ASP.NET Core web server settings
+appsettings.json
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+
+# JetBrains Rider / Visual Studio Code
+.vscode/
+
+# Rider configuration
+.idea/
+
+# VS Code settings
+.vscode/
+
+# ChromeDriver (specific to the OS you're using)
+chromedriver.exe
+chromedriver_mac64
+chromedriver_linux64
+
+# Package-related files
+packages/
+*.nupkg
+*.snupkg
+
+# Visual Studio for Mac configuration
+.vscode/
+
+# User secrets and local development settings
+secrets.json
+*.user
+
+# Build outputs
+out/
+dist/
+
+# Ignore the temporary .NET user profile settings
+*.userosscache
+*.suo
+*.user
+*.sln.docstates
