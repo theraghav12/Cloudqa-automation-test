@@ -10,52 +10,52 @@ class AutomationPracticeTest
         IWebDriver driver = new ChromeDriver();
         driver.Navigate().GoToUrl("https://app.cloudqa.io/home/AutomationPracticeForm");
 
-     
         driver.Manage().Window.Maximize();
 
         try
         {
-          
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
-        
-            IWebElement firstNameField = wait.Until(d => d.FindElement(By.Name("First Name")));
+            // Using reliable selectors (e.g., based on unique attributes or hierarchical paths)
+            IWebElement firstNameField = wait.Until(d => d.FindElement(By.CssSelector("input[name='First Name']")));
             firstNameField.Clear();
-            firstNameField.SendKeys("Raghav ");
+            firstNameField.SendKeys("Raghav");
 
-            IWebElement secondNameField = wait.Until(d => d.FindElement(By.Name("Last Name")));
+            IWebElement secondNameField = wait.Until(d => d.FindElement(By.CssSelector("input[name='Last Name']")));
             secondNameField.Clear();
             secondNameField.SendKeys("Khurana");
 
-
-            IWebElement mobileField = wait.Until(d => d.FindElement(By.XPath("//input[@placeholder='Mobile Number']")));
+            IWebElement mobileField = wait.Until(d => d.FindElement(By.CssSelector("input[placeholder='Mobile Number']")));
             mobileField.Clear();
             mobileField.SendKeys("9876543210");
 
-            
-            IWebElement countryField = wait.Until(d => d.FindElement(By.XPath("//input[@placeholder='Country']")));
+            IWebElement countryField = wait.Until(d => d.FindElement(By.CssSelector("input[placeholder='Country']")));
             countryField.Clear();
             countryField.SendKeys("India");
 
-            IWebElement danceCheckbox = wait.Until(d => d.FindElement(By.Id("Dance")));
+            // Ensure checkbox selection is resilient
+            IWebElement danceCheckbox = wait.Until(d => d.FindElement(By.XPath("//label[text()='Dance']/preceding-sibling::input[@type='checkbox']")));
             if (!danceCheckbox.Selected)
             {
                 danceCheckbox.Click();
             }
 
-            
-            IWebElement maleRadioButton = wait.Until(d => d.FindElement(By.XPath("//input[@value='Male']")));
+            // Ensure radio button selection is resilient
+            IWebElement maleRadioButton = wait.Until(d => d.FindElement(By.XPath("//label[text()='Male']/preceding-sibling::input[@type='radio']")));
             if (!maleRadioButton.Selected)
             {
                 maleRadioButton.Click();
             }
 
-           
-            IWebElement submitButton = wait.Until(d => d.FindElement(By.CssSelector("button[type='submit']")));
+            // Using a more generic selector for the submit button
+            IWebElement submitButton = wait.Until(d => d.FindElement(By.XPath("//button[contains(text(), 'Submit')]")));
             submitButton.Click();
 
-          
             Console.WriteLine("Form submitted successfully.");
+        }
+        catch (WebDriverTimeoutException ex)
+        {
+            Console.WriteLine("Element could not be found in time: " + ex.Message);
         }
         catch (NoSuchElementException ex)
         {
@@ -67,7 +67,6 @@ class AutomationPracticeTest
         }
         finally
         {
-           
             driver.Quit();
         }
     }
