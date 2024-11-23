@@ -16,7 +16,7 @@ Before running the project, ensure you have the following installed:
 bash
 Copy code
 
-git clone https://github.com/your-username/selenium-csharp-automation.git
+git clone https://github.com/theraghav12/Cloudqa-automation-test
 cd selenium-csharp-automation 
 2. Install the necessary NuGet packages:
 To use Selenium in your C# project, install the following NuGet packages:
